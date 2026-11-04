@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer's Block Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Creative Writing Support</p>
+          <h1>Writer's Block Coach</h1>
+        </div>
+      </header>
+
+      <main class="app-card">
+        <aside class="sidebar">
+          <h2>Try a prompt</h2>
+          <div class="prompt-list">
+            <button class="prompt-button" type="button">I know my main character but I don't know what challenge to give them.</button>
+            <button class="prompt-button" type="button">My story feels flat. Help me create tension in the next scene.</button>
+            <button class="prompt-button" type="button">I have a great idea, but I can't get past the opening paragraph.</button>
+            <button class="prompt-button" type="button">Help me plan the next three scenes of my story.</button>
+          </div>
+        </aside>
+
+        <section class="chat-panel">
+          <div id="chat-log" class="chat-log" aria-live="polite">
+            <div class="message assistant">
+              <div class="bubble">
+                Welcome! Tell me about your story, where you're stuck, or what you want your next scene to do.
+              </div>
+            </div>
+          </div>
+
+          <form id="chat-form" class="chat-form">
+            <label for="message-input" class="sr-only">Type your message</label>
+            <textarea id="message-input" rows="3" placeholder="Describe your story block..." required></textarea>
+            <div class="form-actions">
+              <button id="send-btn" type="submit">Send</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
